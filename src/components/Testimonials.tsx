@@ -1,4 +1,3 @@
-
 const Testimonials = () => {
   const testimonials = [
     {
@@ -26,17 +25,17 @@ const Testimonials = () => {
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
-      <span key={i} className={`text-2xl ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}>
+      <span key={i} className={`text-2xl ${i < rating ? 'text-yellow-400' : 'text-gray-600'}`}>
         ★
       </span>
     ));
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-br from-blue-900 to-slate-900 text-white">
+    <section id="testimonials" className="py-20 bg-gradient-to-b from-black to-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
             What Our Clients Say
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -48,17 +47,17 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-300 hover:scale-105"
+              className="bg-black border-2 border-yellow-400/30 hover:border-yellow-400 rounded-lg p-6 hover:shadow-xl hover:shadow-yellow-400/10 transition-all duration-300 hover:scale-105"
             >
               <div className="flex items-center mb-4">
                 <img 
                   src={testimonial.image} 
                   alt={testimonial.name}
-                  className="w-16 h-16 rounded-full object-cover mr-4"
+                  className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-yellow-400"
                 />
                 <div>
-                  <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                  <p className="text-gray-300 text-sm">{testimonial.vehicle}</p>
+                  <h3 className="font-bold text-lg text-yellow-400">{testimonial.name}</h3>
+                  <p className="text-gray-400 text-sm">{testimonial.vehicle}</p>
                 </div>
               </div>
               
@@ -66,7 +65,7 @@ const Testimonials = () => {
                 {renderStars(testimonial.rating)}
               </div>
               
-              <p className="text-gray-200 italic leading-relaxed">
+              <p className="text-gray-300 italic leading-relaxed">
                 "{testimonial.text}"
               </p>
             </div>
@@ -76,16 +75,16 @@ const Testimonials = () => {
         <div className="text-center mt-12">
           <div className="inline-flex items-center space-x-8 text-2xl font-bold">
             <div className="text-center">
-              <div className="text-4xl text-cyan-400">500+</div>
-              <div className="text-gray-300">Happy Customers</div>
+              <div className="text-4xl text-yellow-400 font-serif">500+</div>
+              <div className="text-gray-400">Happy Customers</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl text-cyan-400">98%</div>
-              <div className="text-gray-300">Satisfaction Rate</div>
+              <div className="text-4xl text-yellow-400 font-serif">98%</div>
+              <div className="text-gray-400">Satisfaction Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl text-cyan-400">5★</div>
-              <div className="text-gray-300">Average Rating</div>
+              <div className="text-4xl text-yellow-400 font-serif">5★</div>
+              <div className="text-gray-400">Average Rating</div>
             </div>
           </div>
         </div>
